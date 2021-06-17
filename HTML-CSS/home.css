@@ -4,10 +4,21 @@
     border: 0;
 }
 
+.center{
+    margin:auto;
+    width: 50%;
+}
+
+.close-x{
+    overflow: auto;
+}
+
+.close{
+    float:right;
+}
+
 #greeting{
     font-size:60px;
-    margin: auto;
-    width: 50%;
     padding: 15px;
 }
 
@@ -15,22 +26,24 @@
     text-align: center;
 }
 
-#logo{
+.logo{
     float: left;
-    /*border and width/height for visualization*/
+    /*border and height for visualization*/
     border: 1px solid black;
     height: 75px;
-    width: 200px;
 }
 
 .login{
     float: right;
 }
 
+.login-content{
+    display: flex;
+    flex-direction: column;
+}
+
 nav{
-    margin: auto;
     width: 50%;
-    height: 50%;
     border: 1px solid black;
     padding: 30px;
 }
