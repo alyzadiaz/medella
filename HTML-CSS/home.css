@@ -2,10 +2,13 @@
     margin: 0;
     padding: 0;
     border: 0;
+    background-color: #CAF0F8;
+    font-family: 'News Cycle', sans-serif;
 }
 
 .block{
-    border: 1px solid black;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.15);
     padding: 30px;
     margin: 10px;
 }
@@ -53,8 +56,6 @@
 }
 
 nav{
-    width: 50%;
-    border: 1px solid black;
     padding: 30px;
 }
 
@@ -89,6 +90,18 @@ nav{
     border: 2px solid black; 
 }
 
+.profile-img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: blanchedalmond;
+}
+
 .right{
     float: right;
+}
+
+.search-body{
+    display: flex;
+    flex-direction: row;
 }

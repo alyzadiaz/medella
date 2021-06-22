@@ -14,7 +14,7 @@ function handleClick(event){
 
     close_button.addEventListener("click", ()=>{
         pop.style.display = "none";
-        bar.style.backgroundColor = "white";
+        bar.style.backgroundColor = "#CAF0F8";
         bar.style.opacity = 1;
     })
 }
