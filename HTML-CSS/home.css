@@ -4,6 +4,12 @@
     border: 0;
 }
 
+.block{
+    border: 1px solid black;
+    padding: 30px;
+    margin: 10px;
+}
+
 .center{
     margin:auto;
     width: 50%;
@@ -24,6 +30,10 @@
 
 #greeting p{
     text-align: center;
+}
+
+.left{
+    float: left;
 }
 
 .logo{
@@ -50,6 +60,8 @@ nav{
 
 #nav-container{
     padding:60px;
+    display: flex;
+    flex-direction: row;
 }
 
 #top-bar{
@@ -75,4 +87,8 @@ nav{
     padding: 20px;
     border-radius: 5px;
     border: 2px solid black; 
+}
+
+.right{
+    float: right;
 }
