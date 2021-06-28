@@ -1,5 +1,3 @@
-
-
 (function() {
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     var firebaseConfig = {
@@ -20,7 +18,7 @@
     const btnLogin = document.getElementById('btnLogin');
     const btnSignUp = document.getElementById('btnSignUp');
     const btnLogout = document.getElementById('btnLogout');
-
+    
     //Add login event
     btnLogin.addEventListener('click', e=> {
         //get email and password
@@ -28,12 +26,25 @@
         const pass = txtPassword.value;
         const auth = firebase.auth();
         //sign in
-        const promise = auth.signInWithEmailAndPassword(email,pass);
-        promise.catch (e=> console.log(e.message));
-        /*window.onerror = function(message, url, line) {
-            alert(message + ', ' + url + ', ' + line);
-          };*/
-});
+        
+        const promise = auth.signInWithEmailAndPassword(email,pass).then(function(user){
+            console.log("login successful");
+            console.log(auth.currentUser.uid);
+            //location.href = "../HTML-CSS/home.html";
+        }).catch(function(error){
+            console.log(error.message);
+
+            if(error.message.includes("password")){
+                const password_field = document.getElementById("txtPassword");
+                password_field.classList.add("field-error");
+            }
+
+            if(error.message.includes("badly formatted")){
+                const email_field = document.getElementById("txtEmail");
+                email_field.classList.add("field-error");
+            }
+        });
+    });
 
     btnSignUp.addEventListener('click', e=> {
         //get email and password
@@ -42,7 +53,10 @@
         const pass = txtPassword.value;
         const auth = firebase.auth();
         //sign in
-        const promise = auth.createUserWithEmailAndPassword(email,pass);
+        const promise = auth.createUserWithEmailAndPassword(email,pass).then(function(user){
+            console.log("account creation successful");
+            location.href = "../HTML-CSS/home.html";
+        });
         promise
             .catch (e=> console.log(e.message));
             
@@ -68,3 +82,11 @@
     })
 
 }());
+
+function clearError(id){
+    const field = document.getElementById(id);
+    
+    if(field.classList.contains("field-error")){
+        field.classList.remove("field-error");
+    }
+}

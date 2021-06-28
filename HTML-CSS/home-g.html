@@ -5,14 +5,22 @@
         <title>Medella</title>
         <link rel="stylesheet" type="text/css" href="home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
 
         <style>
             @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
         </style>
 
         <script src="../JAVASCRIPT/home.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script> 
+        
+         
     </head>
-    <body>
+    <body class="body">
         <div id="top-bar">
             <div class="logo">Medella</div>
             <div class="login"><button type="button" class="login-button"><i class="fa fa-user fa-2x" aria-hidden="true"></i></button></div>
@@ -25,7 +33,19 @@
                 </div>
                 <div class="login-content center">
                     <div class="logo">Medella</div>
-                    <p>LOGIN POPUP</p>
+                    <div class="container">
+                        <input id ="txtEmail" type="email" placeholder="Email" oninput="clearError('txtEmail')">
+            
+                        <input id ="txtPassword" type="password" placeholder="Password" oninput="clearError('txtPassword')">
+                        
+                        <div class="container flex">
+                            <button id="btnLogin" type="submit" class="btn btn-action center">Log In</button>
+                            <button id="btnSignUp" type="submit" class="btn btn-secondary center">Sign Up</button>
+                        </div>
+                        
+                        <!--<button id="btnLogout" class="btn btn-action hide" Log out </button>-->
+                    </div>
+                    <script src="../JAVASCRIPT/login.js"></script>
                 </div>
             </div>
          </div>
@@ -35,7 +55,7 @@
         </div>
         <div id="nav-container">
             <nav class="center block">
-                links
+                <a href="search-page.html">Search</a>
             </nav>
         </div>
     </body>
@@ -44,12 +64,11 @@
     </footer>
 </html>
 
-<!--these are for Firebase authentication*/-->
-script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+<!--these are for Firebase authentication*/
+<script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
 <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
 
-
-<!-- These are for Freibse sign in-->
+These are for Freibse sign in
 <h1>Welcome to My Awesome App</h1>
 <div id="firebaseui-auth-container"></div>
-<div id="loader">Loading...</div>
+<div id="loader">Loading...</div>-->
