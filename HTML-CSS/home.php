@@ -1,3 +1,29 @@
+<?php 
+    $servername = "medella.chle4yzdrgqk.us-east-2.rds.amazonaws.com";
+    $username = "admin";
+    $password = "Medella123!";
+            
+    $conn = new mysqli($servername, $username, $password);
+            
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    session_start();
+
+    $uid = $_SESSION['share-uid'];
+    $name = "";
+    $sql = "select First_Name from Medella.User where User_Id ='$uid' ";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $name = $row["First_Name"];
+        }
+    } else {
+        echo "0 results";
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,41 +55,34 @@
                     <span class="close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
                 </div>
                 <div class="login-content center">
-                    <div class="logo">Medella</div>
-                    <div class="container">
-                        <input id ="txtEmail" type="email" placeholder="Email" oninput="clearError('txtEmail')">
-            
-                        <input id ="txtPassword" type="password" placeholder="Password" oninput="clearError('txtPassword')">
-                        
-                        <div class="container flex">
-                            <button id="btnLogin" type="submit" class="btn btn-action center">Log In</button>
-                            <button id="btnSignUp" type="submit" class="btn btn-secondary center">Sign Up</button>
-                        </div>
-                    </div>
-                    <script src="../JAVASCRIPT/login.js"></script>
+                    <!--<span class="profile-img center"></span>-->
+                    <p>USER PROFILE</p>
+                    <button id="btnLogout" class="btn btn-action center">Log Out</button>
                 </div>
             </div>
-         </div>
+        </div>
+        
+        <input id="uid" class="hidden" name="uid">
+        <script src="../JAVASCRIPT/logout.js"></script>
 
         <div id="greeting" class="center">
-            <p>Welcome!</p>
+            <p id="welcome-name">Welcome <?php echo $name?>!</p>
         </div>
-        <div id="nav-container">
+
+        <div id="nav-container" class="center">
             <nav class="center block">
                 <a href="search-page.html">Search</a>
             </nav>
+            <div class="center block">
+                My diagnoses:
+            </div>
+            <div class="center block">
+                Health Tip of the Day (?)
+            </div>
         </div>
     </body>
     <footer>
-
+        
     </footer>
 </html>
 
-<!--these are for Firebase authentication*/
-<script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
-<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css" />
-
-These are for Freibse sign in
-<h1>Welcome to My Awesome App</h1>
-<div id="firebaseui-auth-container"></div>
-<div id="loader">Loading...</div>-->

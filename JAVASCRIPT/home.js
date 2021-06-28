@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () =>{
     const login_button = document.querySelector(".login-button")
     login_button.addEventListener("click", handleClick)
@@ -12,7 +11,6 @@ function handleClick(event){
     const bar = document.getElementById("top-bar");
     bar.style.backgroundColor = "rgba(0,0,0,0.7)";
     
-
     close_button.addEventListener("click", ()=>{
         pop.style.display = "none";
         bar.style.backgroundColor = "#CAF0F8";

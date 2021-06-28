@@ -2,8 +2,38 @@
     margin: 0;
     padding: 0;
     border: 0;
-    background-color: #CAF0F8;
     font-family: 'News Cycle', sans-serif;
+}
+
+.btn{
+    display:inline-block;
+    padding:0.5em 3em;
+    border:0.16em solid #0077b6;
+    border-radius: 30px;
+    background-color: #0077b6;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-weight:400;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.15s;
+}
+
+.btn:hover{
+    color:#DDDDDD;
+    border-color:#03045e;
+    background-color: #03045e;
+}
+
+.btn:active{
+    color:#BBBBBB;
+    border-color:#BBBBBB;
+}
+
+.body{
+    background-color: #caf0f8;
 }
 
 .block{
@@ -11,6 +41,7 @@
     background-color: rgba(0, 0, 0, 0.15);
     padding: 30px;
     margin: 10px;
+    height: 100%;
 }
 
 .center{
@@ -26,6 +57,24 @@
     float:right;
 }
 
+.field-error{
+    background-color: rgba(247, 134, 134, 0.4); 
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.form-box{
+    background-color: white;
+    border-radius: 30px;
+}
+
+.form-fields{
+    justify-content: left;
+}
+
 #greeting{
     font-size:60px;
     padding: 15px;
@@ -33,6 +82,10 @@
 
 #greeting p{
     text-align: center;
+}
+
+.hidden{
+    visibility: hidden;
 }
 
 .left{
@@ -65,9 +118,25 @@ nav{
     flex-direction: row;
 }
 
+h1#new-u{
+    text-align: center;
+    padding: 5%;
+}
+
 #top-bar{
     padding: 15px;
     overflow: auto;
+}
+
+.container{
+    background-color: white;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 
 .popup {
@@ -86,8 +155,7 @@ nav{
     left: 30%;
     width: 40%;
     padding: 20px;
-    border-radius: 5px;
-    border: 2px solid black; 
+    border-radius: 30px;
 }
 
 .profile-img{
