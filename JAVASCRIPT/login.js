@@ -17,7 +17,6 @@
     const txtPassword = document.getElementById('txtPassword');
     const btnLogin = document.getElementById('btnLogin');
     const btnSignUp = document.getElementById('btnSignUp');
-    //const btnLogout = document.getElementById('btnLogout');
 
     //Add login event
     btnLogin.addEventListener('click', e=> {
@@ -55,26 +54,24 @@
         //sign in
         const promise = auth.createUserWithEmailAndPassword(email,pass).then(function(user){
             console.log("account creation successful");
-            location.href = "../HTML-CSS/home.html";
-        });
-        promise
-            .catch (e=> console.log(e.message));
-            
+            location.href = "../HTML-CSS/new-user.html";
+        }).catch(function(error){
+            if(error.message.includes("password")){
+                const password_field = document.getElementById("txtPassword");
+                password_field.classList.add("field-error");
+            }
+
+            if(error.message.includes("badly formatted")){
+                const email_field = document.getElementById("txtEmail");
+                email_field.classList.add("field-error");
+            }
+        }); 
     });
-    /*
-    btnLogout.addEventListener('click', e=> {
-        firebase.auth().signOut().then(()=>{
-            console.log("Log out successful");
-            location.href = "../HTML-CSS/home-g.html";
-        }).catch((error)=>{
-            console.log("Log out unsuccessful.");
-        });
-    });
-    */
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if(firebaseUser) {
             console.log(firebaseUser);
+            document.getElementById("uid").innerHTML = firebaseUser.uid;
             //Authentication state observer - For each of your app's pages that need information about the signed-in user, 
             //attach an observer to the global authentication object. This observer gets called whenever the user's sign-in state changes.
             //var uid = user.id;
