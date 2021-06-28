@@ -11,6 +11,11 @@
         </style>
 
         <script src="../JAVASCRIPT/home.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script> 
     </head>
     <body class="body">
         <div id="top-bar">
@@ -24,15 +29,20 @@
                     <span class="close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
                 </div>
                 <div class="login-content center">
-                    <span class="profile-img center"></span>
-                    <p>PROFILE INFO POPUP</p>
+                    <!--<span class="profile-img center"></span>-->
+                    <p>USER PROFILE</p>
+                    <button id="btnLogout" class="btn btn-action center">Log Out</button>
                 </div>
+                <script src="../JAVASCRIPT/logout.js"></script>
             </div>
          </div>
 
         <div id="greeting" class="center">
             <p>Welcome [INSERT NAME HERE]!</p>
         </div>
+        
+        
+
         <div id="nav-container" class="center">
             <nav class="center block">
                 Search

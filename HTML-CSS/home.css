@@ -75,6 +75,10 @@
     text-align: center;
 }
 
+.hidden{
+    visibility: hidden;
+}
+
 .left{
     float: left;
 }
