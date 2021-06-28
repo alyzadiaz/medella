@@ -1,3 +1,29 @@
+<?php 
+    $servername = "medella.chle4yzdrgqk.us-east-2.rds.amazonaws.com";
+    $username = "admin";
+    $password = "Medella123!";
+            
+    $conn = new mysqli($servername, $username, $password);
+            
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    session_start();
+
+    $uid = $_SESSION['share-uid'];
+    $name = "";
+    $sql = "select First_Name from Medella.User where User_Id ='$uid' ";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $name = $row["First_Name"];
+        }
+    } else {
+        echo "0 results";
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,18 +59,19 @@
                     <p>USER PROFILE</p>
                     <button id="btnLogout" class="btn btn-action center">Log Out</button>
                 </div>
-                <script src="../JAVASCRIPT/logout.js"></script>
-                
             </div>
-         </div>
+        </div>
+        
+        <input id="uid" class="hidden" name="uid">
+        <script src="../JAVASCRIPT/logout.js"></script>
 
         <div id="greeting" class="center">
-            <p id="welcome-name">Welcome!</p>
+            <p id="welcome-name">Welcome <?php echo $name?>!</p>
         </div>
 
         <div id="nav-container" class="center">
             <nav class="center block">
-                Search
+                <a href="search-page.html">Search</a>
             </nav>
             <div class="center block">
                 My diagnoses:
@@ -58,3 +85,4 @@
         
     </footer>
 </html>
+

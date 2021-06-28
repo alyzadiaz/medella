@@ -25,6 +25,9 @@
     VALUES ('$uid', '$f_name', '$l_name', '$email', '$address', '$zip', '$state', '$country')";
     $result = $conn->query($sql);
     
+    session_start();
+    $_SESSION['share-uid'] = $uid;
+
     $conn->close();
-    header('Location: ../HTML-CSS/home.html');
+    header('Location: ../HTML-CSS/home.php');
 ?>
