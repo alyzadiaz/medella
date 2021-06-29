@@ -71,7 +71,7 @@
 
         <div id="nav-container" class="center">
             <nav class="center block">
-                <a href="search-page.html">Search</a>
+                <a href="search.html">Search</a>
             </nav>
             <div class="center block">
                 My diagnoses:
