@@ -169,3 +169,11 @@ input[type=email], input[type=password] {
     float: right;
 }
 
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex > button{
+    margin: 5px;
+}

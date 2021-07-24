@@ -107,12 +107,7 @@
                     <p>No saved articles</p>
                 </div>
             </div>
-            <div class="block hidden">
-                Health Tip of the Day (?)
-            </div>
         </div>
-        </div>
-        
     </body>
     <footer>
         
