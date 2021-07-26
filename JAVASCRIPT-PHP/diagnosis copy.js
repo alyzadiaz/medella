@@ -1,10 +1,8 @@
 var synth = window.speechSynthesis;
 
 var inputForm = document.querySelector('form');
-//var inputTxt = document.querySelector('.txt');
-//var inputTxt = document.getElementById("summary").innerText
+var inputTxt = document.querySelector('.txt');
 var voiceSelect = document.getElementById('select');
-var inputTxt = document.getElementById('exampleText').innerText;
 
 /*
 var pitch = document.querySelector('#pitch');
@@ -89,8 +87,11 @@ function speak(){
         break;
       }
     }
+    
     utterThis.pitch = 1;
     utterThis.rate = 1;
+    //utterThis.pitch = pitch.value;
+    //utterThis.rate = rate.value;
     synth.speak(utterThis);
   }
 }
