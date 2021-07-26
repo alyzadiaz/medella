@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'News Cycle', sans-serif;
+}
+
+.center{
+    margin:auto;
+    width: 50%;
+}
+
+body{
+    background-image: url(../RESOURCES/topo.svg);
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: overlay;
+    overflow-x: hidden;
+}
+
+.search-body{
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 40%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.search-results > h1{
+    padding: 2%;
+    margin: 1%;
+}
+
+@font-face {
+    font-family: coco;
+    src: url(../RESOURCES/Bebas-KM7y.ttf);
+}
+
+a {
+    position: relative;
+    color: #000;
+    text-decoration: none;
+}
+  
+a:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a:hover::before {
+    transform: scaleX(1);
+}
+
+
+#nav-container{
+    padding-top: 25px;
+    font-size: 24px;
+}
+
+#nav-container > .block {
+    padding-top: 20px;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+#bottom-border{
+    border-bottom: 2px black solid;
+}
+
+#saved-articles{
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: color .3s ease;
+}
+
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb {
+  width: 26px;
+  border-radius: 13px;
+  background-clip: padding-box;
+  border: 10px solid transparent;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+*::-webkit-scrollbar-thumb {        
+  box-shadow: inset 0 0 0 10px;
+}
+
+.fade-in {
+    background-color: #323377;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.fade-in:hover {
+    opacity: 1
+}
+
+#saved-articles > p{
+    padding: 10px;
+}
+
+.spacer{
+    padding: 15px;
+}
+
+#welcome-name{
+    font-size: 70px;
+    font-family: coco;
+}
+
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.70);
+    width: 100%;
+    height: 100%;
+}
+
+.popup-content{
+    background-color: white;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.field-error{
+    background-color: rgba(247, 134, 134, 0.4); 
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.login-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-row > img{
+    padding: 1%;
+}
+
+.login-content p{
+    text-align: center;
+}
+
+.login-button{
+    background-color: transparent;
+    padding: 4%;
+}
+
+.right{
+    float: right;
+}
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex > button{
+    margin: 5px;
+}
+
+.inside{
+    padding: 15px;
+    width: 100%;
+    position:relative;
+    background: linear-gradient(90deg,#D6F2FF,#C7E1F3,#B8CFE6,#A9BEDA,#9AADCE,#8B9BC1,#7D8AB5,#6E79A9, #5F679C, #505690, #414584, #323377);
+    background-size: 400% 400%;
+    animation: gradient 60s ease infinite;
+}
+
+#search_button{
+    background-color: transparent;
+}
+
+button{
+    cursor: pointer;
+}
+
+.search-input{
+    width: 30%;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 1px black solid;
+    font-size: larger;
+}
+
+.results-box{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.result{
+    padding: 2%;
+    margin: 1%;
+    width: 95%;
+    background-color:#A9BEDA;
+    font-size: larger;
+}
+
+#diagnosis-summary, #diagnosis-treatment{
+    background-color: white;
+    width: 60%;
+    padding: 2%;
+    margin: 4%;
+}
+
+.diagnosis-body{
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 55%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
