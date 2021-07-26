@@ -25,7 +25,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo $name;?></title>
+        <title><?php echo $name;?> - Medella</title>
         <link rel="stylesheet" type="text/css" href="new-home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="../RESOURCES/lavender.svg">
@@ -47,8 +47,10 @@
             <div class="flex-row">
                 <h1><?php echo $name;?></h1>
                 
-                <img src="../RESOURCES/empty-bookmark.svg" id="bookmark" height="30px">
-                <!--<button><i class="fa fa-plus"></i></button>-->
+                <button id="bookmark">
+                    <img src="../RESOURCES/empty-bookmark.svg" id="empty-mark" height="30px">
+                    <img src="../RESOURCES/filled-bookmark.svg" id="filled-mark" class="none" height="30px">
+                </button>
             </div>
             <p>Diagnosis #ID: <?php echo $id;?></p>
             <div id="google_translate_element"></div>
@@ -89,5 +91,6 @@
             </div>
         </div>
         <?php endwhile; ?>
+        <script src="../JAVASCRIPT-PHP/bookmark.js"></script>
     </body>
 </html>

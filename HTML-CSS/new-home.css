@@ -281,3 +281,13 @@ button{
 #no-results{
     padding: 2%;
 }
+
+#bookmark{
+    padding: 5px;
+    margin: 10px;
+    background-color: transparent;
+}
+
+.none{
+    display: none;
+}

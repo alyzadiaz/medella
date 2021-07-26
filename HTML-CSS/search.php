@@ -76,7 +76,7 @@
                                 $name = $row['name'];
                                 $id = $row['id'];
                     ?>
-                        <form class="id-form" action="../HTML-CSS/diag.php" method="post">
+                        <form class="id-form" action="../HTML-CSS/diagnosis.php" method="post">
                             <button class="underline-button result"><?php echo $name;?></button>
                             <input class="hidden" type="number" name="id" value=<?php echo $id?>>
                         </form>
