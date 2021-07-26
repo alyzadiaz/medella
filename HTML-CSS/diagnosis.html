@@ -11,6 +11,24 @@
 
     </head>
     <body>
+        <div id="google_translate_element"></div> 
+      
+        <script type="text/javascript"> 
+            function googleTranslateElementInit() { 
+                new google.translate.TranslateElement(
+                    {pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 
+                    'google_translate_element'
+                ); 
+            } 
+        </script> 
+      
+        <script type="text/javascript" src=
+    "https://translate.google.com/translate_a/element.js?
+            cb=googleTranslateElementInit">
+        </script>
+
+
+
         <div id="top-bar">
             <img src="../RESOURCES/m-logo.png" height="150px">
             <button type="button" class="login-button right">
@@ -25,10 +43,8 @@
             </div>
             <p>Diagnosis #ID: 143</p>
 
-            <div id="google_translate_element"></div>
-            
-            <!-- Google translate element -->
-            <div id="google_translate_element"></div>
+            <!--<div id="google_translate_element"></div><script>
+
             <script type ="text/javascript">
                 function googleTranslateElementInit(){
                     new google.translate.TranslateElement(
@@ -40,8 +56,9 @@
             <script type="text/javascript" src=
         "https://translate.google.com/translate_a/element.js?
                 cb=googleTranslateElementInit">
-            </script> 
-        </div>
+            </script> -->
+        
+
         <p id="exampleText">This is a test </p>
         <div class="flex-row">
             <div  id="diagnosis-summary" class="block left">
@@ -49,7 +66,7 @@
                 
                 <form>
                 <select id="select"></select>
-                <input type="image" src="audio button.png" alt="Submit" width="20" height="20">
+                <input type="image" src="../RESOURCES/audio button.png" alt="Submit" width="20" height="20">
                 <!--<button id="play" type="submit">Play</button>-->
                 </form>
                 <p id="summary">Parkinson's disease is a progressive nervous system disorder that affects movement. Symptoms start 
@@ -61,9 +78,9 @@
                  your brain and improve your symptoms.
                 </p>
             </div>
-            <div id="diagnosis-symptoms" class="vid-desc block right">
+            <div id="diagnosis-symptoms" class="block left">
                 <h2>Symptoms</h2>
-                <input type="image" id="audio" alt="Audio option" src="audio button.png" width="20" height="20">
+                <input type="image" id="audio" alt="Audio option" src="../RESOURCES/audio button.png" width="20" height="20">
                 <p>Parkinson's disease signs and symptoms can be different for everyone. Early signs may be mild and go unnoticed. 
                 Symptoms often begin on one side of your body and usually remain worse on that side, even after symptoms begin to 
                 affect both sides. Parkinson's signs and symptoms may include (Tremor. A tremor, or shaking, usually begins in a limb, 
@@ -81,7 +98,7 @@
             </div>
             <div  id="diagnosis-treatment" class="block left">
                 <h2>Treatment</h2>
-                <input type="image" id="audio" alt="Audio option" src="audio button.png" width="20" height="20">
+                <input type="image" id="audio" alt="Audio option" src="../RESOURCES/audio button.png" width="20" height="20">
                 <p>Parkinson's disease can't be cured, but medications can help control your symptoms, often dramatically. In some more 
                 advanced cases, surgery may be advised. Your doctor may also recommend lifestyle changes, especially ongoing aerobic 
                 exercise. In some cases, physical therapy that focuses on balance and stretching also is important. A speech-language 
