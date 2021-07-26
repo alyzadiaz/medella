@@ -1,3 +1,18 @@
+<?php
+    $servername = "medella.chle4yzdrgqk.us-east-2.rds.amazonaws.com";
+    $username = "admin";
+    $password = "Medella123!";
+                    
+    $conn = new mysqli($servername, $username, $password);
+                    
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM Medella.disease ORDER BY name";
+    $result = mysqli_query($conn, $sql);
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,10 +40,13 @@
             <div class="search-results">
                 <h1>Search Results</h1>
                 <div class="results-box">
-                    <a href="../HTML-CSS/diagnosis.html" class="result">HEART DISEASE</a>
-                    <a href="../HTML-CSS/diagnosis.html" class="result">HEART DISEASE</a>
-                    <a href="../HTML-CSS/diagnosis.html" class="result">HEART DISEASE</a>
-                    <a href="../HTML-CSS/diagnosis.html" class="result">HEART DISEASE</a>
+                    <?php while ($row = mysqli_fetch_array($result)): ?>
+                    <?php $name = $row['name']?>
+
+                    <a href="../HTML-CSS/diagnosis.html" class="result"><?php echo $name; ?></a>
+
+                    <?php endwhile; ?>
+
                 </div>
             </div>
         </div>

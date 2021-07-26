@@ -257,6 +257,7 @@ button{
     width: 95%;
     background-color:#A9BEDA;
     font-size: larger;
+    text-transform: uppercase;
 }
 
 #diagnosis-summary, #diagnosis-treatment{
