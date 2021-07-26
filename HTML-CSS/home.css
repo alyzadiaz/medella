@@ -265,3 +265,7 @@ input[type=email], input[type=password] {
     padding:80px 0;
     text-align: center;
 }
+
+select {
+    width: 25%;
+  }
