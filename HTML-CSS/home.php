@@ -12,6 +12,7 @@
     session_start();
 
     //$uid = $_SESSION['share-uid'];
+    /*
     if(isset($_POST["uid"])){
         $test = $_POST["uid"];
         echo $test;
@@ -32,8 +33,8 @@
             $name = $row["First_Name"];
         }
     } else {
-        //echo "0 results";
-    }
+        echo "0 results";
+    }*/
 ?>
 
 <!DOCTYPE html>
@@ -88,7 +89,7 @@
         </script>
 
         <div id="greeting" class="center">
-            <p id="welcome-name">Welcome<?php echo $name?></p>
+            <p id="welcome-name">Welcome</p>
 
             <div id="nav-container">
             <nav class="block">
