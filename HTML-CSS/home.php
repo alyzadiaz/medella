@@ -49,7 +49,7 @@
             @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
         </style>
 
-        <script src="../JAVASCRIPT/home-login-button.js"></script>
+        <script src="../JAVASCRIPT-PHP/home-login-button.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
@@ -80,7 +80,7 @@
             <input id="uid" name="uid">
             
         </form>
-        <script src="../JAVASCRIPT/logout.js"></script>
+        <script src="../JAVASCRIPT-PHP/logout.js"></script>
 
         <script type="text/javascript">
             setTimeout(() => {
