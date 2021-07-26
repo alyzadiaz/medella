@@ -221,7 +221,7 @@ input[type=email], input[type=password] {
 }
 
 .inside{
-    padding: 30px;
+    padding: 15px;
     width: 100%;
     position:relative;
     background: linear-gradient(90deg,#D6F2FF,#C7E1F3,#B8CFE6,#A9BEDA,#9AADCE,#8B9BC1,#7D8AB5,#6E79A9, #5F679C, #505690, #414584, #323377);
