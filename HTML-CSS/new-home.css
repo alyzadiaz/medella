@@ -10,13 +10,19 @@
     width: 50%;
 }
 
-.body{
-    background-image: url(../RESOURCES/m-bg.png);
+body{
+    background-image: url(../RESOURCES/topo.svg);
     background-size: cover;
     height: 100%;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow: overlay;
+}
+
+.search-body{
+    background-color: white;
+    height: 475px;
 }
 
 @font-face {
@@ -94,7 +100,7 @@ a:hover::before {
 }
 
 .fade-in {
-    background-color: #00AED1;
+    background-color: #323377;
     border: none;
     color: white;
     padding: 8px 16px;
@@ -176,4 +182,35 @@ input[type=email], input[type=password] {
 
 .flex > button{
     margin: 5px;
+}
+
+.inside{
+    padding: 30px;
+    width: 100%;
+    position:relative;
+    background-color: #0077b6;
+}
+
+.search-button{
+    position: absolute;
+    top: 0;
+    border-radius: 20px;
+    right: 20px;
+    z-index: 2;
+    border: none;
+    top: 16px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #0077b6;
+    transform: translateX(2px);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.search-input{
+    width: 30%;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 1px black solid;
+    font-size: larger;
 }
