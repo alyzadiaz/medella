@@ -4,7 +4,7 @@ var inputForm = document.querySelector('form');
 //var inputTxt = document.querySelector('.txt');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
-var inputTxt = document.getElementById('exampleText').innerText;
+var inputTxt;
 
 /*
 var pitch = document.querySelector('#pitch');
@@ -60,15 +60,10 @@ const a = getAllVoices()
     populateVoiceList(response);
     if (speechSynthesis.onvoiceschanged !== undefined) {
       speechSynthesis.onvoiceschanged = populateVoiceList(response);
+      inputTxt = voiceSelect.value;
     }
   });
 
-/*
-populateVoiceList();
-if (speechSynthesis.onvoiceschanged !== undefined) {
-  speechSynthesis.onvoiceschanged = populateVoiceList;
-}
-*/
 function speak(){
     if (synth.speaking) {
         console.error('speechSynthesis.speaking');
