@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <title>Medella</title>
-        <link rel="stylesheet" type="text/css" href="home.css">
+        <link rel="stylesheet" type="text/css" href="new-home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <style>
             @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
         </style>
 
-        <script src="../JAVASCRIPT/home.js"></script>
+        <script src="../JAVASCRIPT/home-login-button.js"></script>
 
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
@@ -19,40 +19,54 @@
     </head>
     <body class="body">
         <div id="top-bar">
-            <div class="logo">Medella</div>
-            <div class="login"><button type="button" class="login-button"><i class="fa fa-user fa-2x" aria-hidden="true"></i></button></div>
+            <img src="../RESOURCES/m-logo.png" height="150px">
+            <button type="button" class="login-button right">
+                <img src="../RESOURCES/settings.png" height="30px">
+            </button>
         </div>
-
         <div class="popup">
             <div class="popup-content">
                 <div class="close-x">
                     <span class="close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
                 </div>
                 <div class="login-content center">
-                    <div class="logo">Medella</div>
+                    <img src="../RESOURCES/m-logo.png" class="center" height="80px" width="160px">
                     <div class="container">
                         <input id ="txtEmail" type="email" placeholder="Email" oninput="clearError('txtEmail')">
             
                         <input id ="txtPassword" type="password" placeholder="Password" oninput="clearError('txtPassword')">
                         
                         <div class="container flex">
-                            <button id="btnLogin" type="submit" class="btn btn-action center">Log In</button>
-                            <button id="btnSignUp" type="submit" class="btn btn-secondary center">Sign Up</button>
+                            <button id="btnLogin" type="submit" class="btn btn-action fade-in center">Log In</button>
+                            <button id="btnSignUp" type="submit" class="btn btn-secondary fade-in center">Sign Up</button>
                         </div>
                     </div>
                     <script src="../JAVASCRIPT/login.js"></script>
                 </div>
             </div>
-         </div>
-
+        </div>
         <div id="greeting" class="center">
-            <p>Welcome!</p>
-        </div>
-        <div id="nav-container">
-            <nav class="center block">
-                <a href="search.html">Search</a>
+            <p id="welcome-name">Welcome</p>
+
+            <div id="nav-container">
+            <nav class="block">
+                <a href="search.html">Search <i class="fa fa-search" aria-hidden="true"></i></a>
             </nav>
+            <div class="block">
+                <p id="bottom-border">Saved Articles</p>
+                <div class="spacer"></div>
+                <div id="saved-articles">
+                    <p>No saved articles</p>
+                    <p>No saved articles</p>
+                    <p>No saved articles</p>
+                    <p>No saved articles</p>
+                    <p>No saved articles</p>
+                    <p>No saved articles</p>
+                    <p>No saved articles</p>
+                </div>
+            </div>
         </div>
+        
     </body>
     <footer>
 
