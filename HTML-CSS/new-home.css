@@ -110,6 +110,18 @@ a:hover::before {
     transition: 0.3s;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .fade-in:hover {
     opacity: 1
 }
@@ -188,7 +200,9 @@ input[type=email], input[type=password] {
     padding: 30px;
     width: 100%;
     position:relative;
-    background-color: #0077b6;
+    background: linear-gradient(90deg,#D6F2FF,#C7E1F3,#B8CFE6,#A9BEDA,#9AADCE,#8B9BC1,#7D8AB5,#6E79A9, #5F679C, #505690, #414584, #323377);
+    background-size: 400% 400%;
+    animation: gradient 60s ease infinite;
 }
 
 .search-button{
