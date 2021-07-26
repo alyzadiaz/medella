@@ -50,8 +50,14 @@
                         $search_query;
                         if(isset($_GET['search-query'])){
                             $search_query = $_GET['search-query'];
-                            $new_search_query = "SELECT name, id FROM Medella.disease where LOWER(name) like '%$search_query%'";
+                            $new_search_query = "SELECT name, id FROM Medella.disease where LOWER(name) like '%$search_query%' ORDER BY name";
                             $new_results = mysqli_query($conn, $new_search_query);
+
+                            if($new_results->num_rows==0){
+                    ?>
+                                <h1 id="no-results">No results found.</h1>
+                    <?php
+                            }
 
                             while ($row = mysqli_fetch_array($new_results)):
                                 $new_name = $row['name'];
@@ -76,6 +82,8 @@
                         </form>
 
                     <?php endwhile; }?>
+
+                    <a href="../HTML-CSS/search.php" class="redo-search"><img src="../RESOURCES/left-arrow.svg" height="35px"></a>
                 </div>
             </div>
         </div>
