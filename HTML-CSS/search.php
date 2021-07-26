@@ -50,7 +50,7 @@
                         $search_query;
                         if(isset($_GET['search-query'])){
                             $search_query = $_GET['search-query'];
-                            $new_search_query = "SELECT name, id FROM Medella.disease where name='$search_query'";
+                            $new_search_query = "SELECT name, id FROM Medella.disease where LOWER(name) like '%$search_query%'";
                             $new_results = mysqli_query($conn, $new_search_query);
 
                             while ($row = mysqli_fetch_array($new_results)):
