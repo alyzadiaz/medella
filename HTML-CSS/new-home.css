@@ -264,6 +264,7 @@ button{
     width: 60%;
     padding: 2%;
     margin: 4%;
+    height: fit-content;
 }
 
 .diagnosis-body{
@@ -272,5 +273,5 @@ button{
     top: 55%;
     bottom: 0;
     width: 100%;
-    height: 100%;
+    height: fit-content;
 }
