@@ -21,8 +21,17 @@ body{
 }
 
 .search-body{
-    background-color: white;
-    height: 475px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 40%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.search-results > h1{
+    padding: 2%;
+    margin: 1%;
 }
 
 @font-face {
@@ -83,7 +92,6 @@ a:hover::before {
     overflow-x: hidden;
     overflow-y: scroll;
     transition: color .3s ease;
-    
 }
 
 *::-webkit-scrollbar,
@@ -205,20 +213,12 @@ input[type=email], input[type=password] {
     animation: gradient 60s ease infinite;
 }
 
-.search-button{
-    position: absolute;
-    top: 0;
-    border-radius: 20px;
-    right: 20px;
-    z-index: 2;
-    border: none;
-    top: 16px;
-    height: 30px;
+#search_button{
+    background-color: transparent;
+}
+
+button{
     cursor: pointer;
-    background-color: #0077b6;
-    transform: translateX(2px);
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .search-input{
@@ -226,5 +226,19 @@ input[type=email], input[type=password] {
     background-color: transparent;
     outline: none;
     border-bottom: 1px black solid;
+    font-size: larger;
+}
+
+.results-box{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.result{
+    padding: 2%;
+    margin: 1%;
+    width: 95%;
+    background-color:#A9BEDA;
     font-size: larger;
 }
