@@ -259,7 +259,7 @@ button{
     font-size: larger;
 }
 
-#diagnosis-summary, #diagnosis-treatment{
+#diagnosis-summary, #diagnosis-treatment, #diagnosis-symptoms{
     background-color: white;
     width: 60%;
     padding: 2%;
