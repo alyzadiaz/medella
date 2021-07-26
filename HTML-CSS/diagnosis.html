@@ -4,12 +4,10 @@
         <title>Heart Disease</title>
         <link rel="stylesheet" type="text/css" href="home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <style>
             @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
         </style>
-
-        <script src="../JAVASCRIPT/diagnosis.js"></script>
+        <!--<script src="../JAVASCRIPT/diagnosis.js"></script>-->
 
     </head>
     <body class="body">
@@ -20,24 +18,14 @@
         <div id="diagnosis-title" class="inside">
             <div class="flex-row">
                 <h1>HEART DISEASE</h1>
+                <!-- Button for audio option of content of paragraph -->
                 <input type="image" id="bookmark icon" alt="Bookmark option" src="bookmark icon.png" width="30" height="30">
                 <!--<button><i class="fa fa-plus"></i></button>-->
             </div>
             <p>Diagnosis #ID: XXXXXXXXX</p>
-            <!--<div class="flex-row">
-                <select name="lang" id="lang">
-                    <option>English</option>
-                    <option>Spanish</option>
-                    <option>French</option>
-                    <option>Chinese (Mandarin)</option>
-                    <option>Portuguese (Brazilian)</option>
-                    <option>Swahili</option>
-                    <option>Russian</option>
-                </select>
-                <button><i class="fa fa-volume-up fa-2x"></i></button>
-            </div>-->
-            <div id="google_translate_element"></div>
             
+            <!-- Google translate element -->
+            <div id="google_translate_element"></div>
             <script type ="text/javascript">
                 function googleTranslateElementInit(){
                     new google.translate.TranslateElement(
@@ -46,20 +34,38 @@
                     );
                 }            
             </script>
-
             <script type="text/javascript" src=
         "https://translate.google.com/translate_a/element.js?
                 cb=googleTranslateElementInit">
             </script> 
-        
         </div>
+        <p id="exampleText">This is a test </p>
         <div class="flex-row">
             <div  id="diagnosis-summary" class="block left">
                 <h2>Summary</h2>
-                <!--<div class="container">
-                    <img src="audio button.png" alt="Audio option" width="60" height="60">
-                    <button class="btn">Button</button>
-                </div>-->
+                
+                <form>
+                <select id="select"></select>
+                <input type="image" src="audio button.png" alt="Submit" width="20" height="20">
+                <!--<button id="play" type="submit">Play</button>-->
+                </form>
+                <p id="summary">Heart disease is the leading cause of death in the United States, causing about 1 in 4 deaths.1 The term 
+                “heart disease” refers to several types of heart conditions. In the United States, the most common type of heart disease 
+                is coronary artery disease (CAD), which can lead to heart attack. You can greatly reduce your risk for heart disease 
+                through lifestyle changes and, in some cases, medicine.
+                </p>
+            </div>
+            <div id="diagnosis-symptoms" class="vid-desc block right">
+                <h2>Symptoms</h2>
+                <input type="image" id="audio" alt="Audio option" src="audio button.png" width="20" height="20">
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
+                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam 
+                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
+                    voluptatem sequi nesciunt.
+                </p>
+            </div>
+            <div  id="diagnosis-treatment" class="block left">
+                <h2>Treatment</h2>
                 <input type="image" id="audio" alt="Audio option" src="audio button.png" width="20" height="20">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
@@ -67,33 +73,7 @@
                     sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
-            <div id="diagnosis-treatment" class="vid-desc block right">
-                <h2>How to Treat</h2>
-                <input type="image" id="audio" alt="Audio option" src="audio button.png" width="20" height="20">
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
-                    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam 
-                    voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
-                    voluptatem sequi nesciunt. <br>
-                    <br>
-                    <ol>
-                        <li>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
-                            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-                        </li>
-                        <li>
-                            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut 
-                            aliquid ex ea commodi consequatur?
-                        </li>
-                    </ol>
-                    <br>
-                    Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui 
-                    dolorem eum fugiat quo voluptas nulla pariatur?
-                </p>
-                <br>
-                <div id="video-section" class="center">
-                    <p class="center2">video</p>
-                </div>
-            </div>
         </div>
+        <script src="../JAVASCRIPT/diagnosis.js"></script>
     </body>
 </html>
