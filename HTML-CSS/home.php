@@ -94,7 +94,7 @@
 
             <div id="nav-container">
             <nav class="block">
-                <a href="search.html">Search <i class="fa fa-search" aria-hidden="true"></i></a>
+                <a href="search.php">Search <i class="fa fa-search" aria-hidden="true"></i></a>
             </nav>
             <div class="block">
                 <p id="bottom-border">Saved Articles</p>
