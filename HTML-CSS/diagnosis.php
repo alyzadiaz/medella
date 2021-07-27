@@ -14,7 +14,7 @@
     $sql = "SELECT * FROM Medella.disease WHERE id=$id";
     $result = mysqli_query($conn, $sql);
 
-    while ($row = mysqli_fetch_array($result)):
+    while ($result != false && $row = mysqli_fetch_array($result)):
         $name = $row['name'];
         $id = $row['id'];
         $treatment = $row['treatment'];
@@ -72,15 +72,16 @@
                     <h2>Summary</h2>
                     <span class="helper"></span><img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
                 </div>
-                <form>
+                
+                <!-- <form> -->
                 <select id="select"></select>
                     <!--<input type="image" src="../RESOURCES/speaker.svg" alt="Submit" width="20" height="20">
                     <button id="play" type="submit">Play</button>-->
-                    <button onclick="getInnerText('summary1')" id=sumBut class="audio button">
+                    <button onclick="playAudio()" id=sumBut class="audio button">
                         <img src="../RESOURCES/audio button.png" height="25px">
                     </button>
-                </form>
-                <p id=summary1><?php echo $summary;?></p>
+                    <p id=summary1><?php echo $summary;?></p>
+                <!--</form> -->
             </div>
             <div id="diagnosis-treatment" class="block right">
                 <div class="flex-row">

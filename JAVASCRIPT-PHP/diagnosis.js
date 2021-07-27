@@ -1,10 +1,10 @@
 var synth = window.speechSynthesis;
 
-var inputForm = document.querySelector('form');
+//var inputForm = document.querySelector('form');
 //var inputTxt = document.querySelector('.txt');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
-//var inputTxt = getInnerText(pName);
+var inputTxt = "hello world";
 
 var voices = [];
 
@@ -12,14 +12,16 @@ var voices = [];
 /*function getInnerText(pName) {
   alert(document.getElementById(pName).innerText)
 }*/
-function getInnerText(pName) {
-  var inputTxt = document.getElementById(pName).innerText
-  //alert(inputTxt)
+
+/*function getInnerText(pName) {
+  //var inputTxt = document.getElementById(pName).innerText
+  var inputTxt = "Hello world";
+  alert(inputTxt)
 
   //speak();
 
   //inputTxt.blur();
-}
+}*/
 
 function getAllVoices(){
   return new Promise(
@@ -96,18 +98,18 @@ function speak(){
   }
 }
 
-/*function playAudio() {
-  getInnerText(pName)
+function playAudio() {
+  //getInnerText(pName)
   speak();
-  inputTxt.blur();
-}*/
+  //inputTxt.blur();
+}
 
-inputForm.onsubmit = function(event) {
+/*inputForm.onsubmit = function(event) {
   event.preventDefault();
   //getInnerText(pName)
   speak();
   inputTxt.blur();
-}
+}*/
 
 /*pitch.onchange = function() {
   pitchValue.textContent = pitch.value;
