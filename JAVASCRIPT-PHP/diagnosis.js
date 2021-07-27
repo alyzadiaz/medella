@@ -5,6 +5,7 @@ var inputForm = document.querySelector('form');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
 //var inputTxt = getInnerText(pName);
+<<<<<<< Updated upstream
 
 
 /*
@@ -13,6 +14,8 @@ var pitchValue = document.querySelector('.pitch-value');
 var rate = document.querySelector('#rate');
 var rateValue = document.querySelector('.rate-value');
 */
+=======
+>>>>>>> Stashed changes
 
 var voices = [];
 
@@ -24,7 +27,11 @@ function getInnerText(pName) {
   var inputTxt = document.getElementById(pName).innerText
   //alert(inputTxt)
 
+<<<<<<< Updated upstream
   speak();
+=======
+  //speak();
+>>>>>>> Stashed changes
 
   //inputTxt.blur();
 }
@@ -106,6 +113,7 @@ function speak(){
 
 /*function playAudio() {
   getInnerText(pName)
+<<<<<<< Updated upstream
   speak();
   inputTxt.blur();
 }*/
@@ -114,6 +122,16 @@ function speak(){
   event.preventDefault();
   getInnerText(pName)
   speak();
+=======
+  speak();
+  inputTxt.blur();
+}*/
+
+inputForm.onsubmit = function(event) {
+  event.preventDefault();
+  //getInnerText(pName)
+  speak();
+>>>>>>> Stashed changes
   inputTxt.blur();
 }*/
 
