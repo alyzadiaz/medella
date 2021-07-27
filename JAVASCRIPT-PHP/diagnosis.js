@@ -8,10 +8,6 @@ var inputTxt = "hello world";
 
 var voices = [];
 
-summaryButton.onclick = function(){
-  speak();
-}
-
 //function to get inner text of selected section
 /*function getInnerText(pName) {
   alert(document.getElementById(pName).innerText)
@@ -27,7 +23,7 @@ summaryButton.onclick = function(){
   //inputTxt.blur();
 }*/
 
-getInnerText();
+//getInnerText();
 
 function getAllVoices(){
   return new Promise(
