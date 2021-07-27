@@ -4,7 +4,7 @@ var inputForm = document.getElementById("lang-form");
 //var inputTxt = document.querySelector('.txt');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
-var inputTxt = "hello world";
+//var inputTxt = document.getElementById("summary1").innerText;
 
 
 var summaryButton = document.getElementById("sumBut");
@@ -12,15 +12,18 @@ var summaryButton = document.getElementById("sumBut");
 var voices = [];
 
 summaryButton.onclick = function(){
-  speak();
+  var inputTxt = document.getElementById("summary1").innerText;
+  alert(inputTxt)
+  speak(inputTxt);
 }
 
 //function to get inner text of selected section
 /*function getInnerText(pName) {
   alert(document.getElementById(pName).innerText)
 }*/
-function getInnerText() {
+function getInnerText(pName) {
   //var inputTxt = document.getElementById(pName).innerText
+  
   //alert(inputTxt)
 
   //speak();
@@ -78,9 +81,9 @@ const a = getAllVoices()
     }
   });
 
-function speak(){
+function speak(inputTxt){
     if (synth.speaking) {
-        console.error('speechSynthesis.speaking');
+        console.log('speechSynthesis.speaking');
         return;
     }
     if (inputTxt.value !== '') {
@@ -113,8 +116,8 @@ function speak(){
 inputForm.onsubmit = function(event) {
   event.preventDefault();
   //getInnerText(pName)
-  speak();
-  inputTxt.blur();
+  //speak();
+  //inputTxt.blur();
 }
 
 /*pitch.onchange = function() {

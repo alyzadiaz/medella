@@ -76,11 +76,11 @@
                 <select id="select"></select>
                     <!--<input type="image" src="../RESOURCES/speaker.svg" alt="Submit" width="20" height="20">
                     <button id="play" type="submit">Play</button>-->
-                    <button onclick="getInnerText('summary1')" id="sumBut" class="audio button">
+                    <button onclick id="sumBut" class="audio button">
                         <img src="../RESOURCES/audio button.png" height="25px">
                     </button>
                 </form>
-                <p id="summary"><?php echo $summary;?></p>
+                <p id="summary1"><?php echo $summary;?></p>
             </div>
             <div id="diagnosis-treatment" class="block right">
                 <div class="flex-row">
