@@ -291,3 +291,7 @@ button{
 .none{
     display: none;
 }
+
+button {
+    background-color: transparent;
+}

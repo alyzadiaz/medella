@@ -34,7 +34,7 @@
     </head>
     <body>
         <div id="top-bar">
-            <img src="../RESOURCES/m-logo.png" height="150px">
+            <button><img src="../RESOURCES/m-logo.png" height="150px"></button> <!--link to home pages-->
             <button type="button" class="login-button right">
                 <img src="../RESOURCES/settings.png" height="30px">
             </button>

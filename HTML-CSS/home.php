@@ -11,22 +11,9 @@
             
     session_start();
 
-    //$uid = $_SESSION['share-uid'];
-    /*
-    if(isset($_POST["uid"])){
-        $test = $_POST["uid"];
-        echo $test;
-    }else{?>
-
-    <script>
-        document.getElementById("form").submit();
-    </script>
-
-    <?php
-    }
-            
+    $uid = $_POST['uid'];
     $name = "";
-    $sql = "select First_Name from Medella.User where User_Id ='$test' ";
+    $sql = "select First_Name from Medella.User where User_Id ='$uid' ";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -34,7 +21,7 @@
         }
     } else {
         echo "0 results";
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
@@ -77,10 +64,10 @@
             </div>
         </div>
         
-        <form id="form" name="id-form" class ="hidden" action="home.php" method="post">
+        <form id="form" name="id-form" class ="hidden" method="post">
             <input id="uid" name="uid">
-            
         </form>
+
         <script src="../JAVASCRIPT-PHP/logout.js"></script>
 
         <script type="text/javascript">
@@ -90,7 +77,7 @@
         </script>
 
         <div id="greeting" class="center">
-            <p id="welcome-name">Welcome</p>
+            <p id="welcome-name">Welcome, <?php echo $name?></p>
 
             <div id="nav-container">
             <nav class="block">
@@ -100,13 +87,22 @@
                 <p id="bottom-border">Saved Articles</p>
                 <div class="spacer"></div>
                 <div id="saved-articles">
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
+
+                    <?php 
+                        $query_articles = "SELECT saved_articles FROM Medella.User WHERE User_Id='$uid'";
+                        $articles_results = mysqli_query($conn, $query_articles);
+
+                        if($articles_results->num_rows==0){
+                    ?>
+                        <h1 id="no-results">No articles saved.</h1>
+                    <?php
+                        }
+                        
+                        while($row = mysqli_fetch_array($articles_results)):
+                        //load articles that post to diagnosis.php
+                        endwhile;
+                    ?>
+
                 </div>
             </div>
         </div>

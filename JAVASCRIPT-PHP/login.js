@@ -29,7 +29,7 @@
         const promise = auth.signInWithEmailAndPassword(email,pass).then(function(user){
             console.log("login successful");
             //console.log(auth.currentUser.uid);
-            location.href = "../HTML-CSS/home.php";
+            location.href = "../HTML-CSS/pull-user.html";
         }).catch(function(error){
             console.log(error.message);
 
