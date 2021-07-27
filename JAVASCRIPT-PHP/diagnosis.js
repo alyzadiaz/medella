@@ -8,6 +8,10 @@ var inputTxt = "hello world";
 
 var voices = [];
 
+summaryButton.onclick = function(){
+  speak();
+}
+
 //function to get inner text of selected section
 /*function getInnerText(pName) {
   alert(document.getElementById(pName).innerText)
@@ -22,6 +26,8 @@ var voices = [];
 
   //inputTxt.blur();
 }*/
+
+getInnerText();
 
 function getAllVoices(){
   return new Promise(
@@ -68,7 +74,6 @@ const a = getAllVoices()
     populateVoiceList(response);
     if (speechSynthesis.onvoiceschanged !== undefined) {
       speechSynthesis.onvoiceschanged = populateVoiceList(response);
-      inputTxt = voiceSelect.value;
     }
   });
 
@@ -78,11 +83,11 @@ function speak(){
         return;
     }
     if (inputTxt.value !== '') {
-    var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
-    utterThis.onend = function (event) {
+      var utterThis = new SpeechSynthesisUtterance(inputTxt);
+      utterThis.onend = function (event) {
         console.log('SpeechSynthesisUtterance.onend');
-    }
-    utterThis.onerror = function (event) {
+      }
+      utterThis.onerror = function (event) {
         console.error('SpeechSynthesisUtterance.onerror');
     }
     var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
@@ -92,8 +97,8 @@ function speak(){
         break;
       }
     }
-    utterThis.pitch = 1;
-    utterThis.rate = 1;
+    //utterThis.pitch = 1;
+    //utterThis.rate = 1;
     synth.speak(utterThis);
   }
 }
