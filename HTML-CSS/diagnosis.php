@@ -70,14 +70,12 @@
             <div  id="diagnosis-summary" class="block left">
                 <div class="flex-row">
                     <h2>Summary</h2>
-                    <span class="helper"></span><img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    <!--<span class="helper"></span><img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">-->
                 </div>
                 <form id="lang-form">
                 <select id="select"></select>
-                    <!--<input type="image" src="../RESOURCES/speaker.svg" alt="Submit" width="20" height="20">
-                    <button id="play" type="submit">Play</button>-->
                     <button onclick id="sumBut" class="audio button">
-                        <img src="../RESOURCES/audio button.png" height="25px">
+                        <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
                     </button>
                 </form>
                 <p id="summary1"><?php echo $summary;?></p>
@@ -85,14 +83,18 @@
             <div id="diagnosis-treatment" class="block right">
                 <div class="flex-row">
                     <h2>Symptoms</h2>
-                    <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    <button class="audio button">
+                        <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    </button>
                 </div>
                 <p><?php echo $symptoms;?></p>               
             </div>
             <div id="diagnosis-treatment" class="block right">
                 <div class="flex-row">
                     <h2>Treatment</h2>
-                    <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    <button class="audio button">
+                        <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    </button>
                 </div>
                 <p><?php echo $treatment;?></p>
             </div>

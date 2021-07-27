@@ -38,6 +38,21 @@
                 <button type="submit" id="search_button"><i class="fa fa-search fa-2x"></i></button>
             </form>
         </div>
+
+        <div id="google_translate_element"></div>
+            
+        <script type ="text/javascript">
+            function googleTranslateElementInit(){
+                new google.translate.TranslateElement(
+                    {pageLanguage: 'en'},
+                    'google_translate_element'
+                );
+            }            
+        </script>
+
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+
+
         <?php 
             
         ?>
@@ -87,7 +102,7 @@
                 </div>
             </div>
         </div>
-        <script src="../JAVASCRIPT-PHP/search.js"></script>
+        <!--<script src="../JAVASCRIPT-PHP/search.js"></script>-->
     </body>
     <footer>
         
