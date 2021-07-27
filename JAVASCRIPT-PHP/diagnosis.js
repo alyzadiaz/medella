@@ -4,7 +4,7 @@ var inputForm = document.getElementById("lang-form");
 //var inputTxt = document.querySelector('.txt');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
-var inputTxt = document.getElementById("summary").innerHTML;
+var inputTxt = "hello world";
 
 
 var summaryButton = document.getElementById("sumBut");
