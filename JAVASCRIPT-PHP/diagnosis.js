@@ -1,29 +1,34 @@
 var synth = window.speechSynthesis;
 
-//var inputForm = document.querySelector('form');
+var inputForm = document.getElementById("lang-form");
 //var inputTxt = document.querySelector('.txt');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
-var inputTxt = "hello world";
+var inputTxt = document.getElementById("summary").innerHTML;
+
+
+var summaryButton = document.getElementById("sumBut");
 
 var voices = [];
+
+summaryButton.onclick = function(){
+  speak();
+}
 
 //function to get inner text of selected section
 /*function getInnerText(pName) {
   alert(document.getElementById(pName).innerText)
 }*/
-
-/*function getInnerText(pName) {
+function getInnerText() {
   //var inputTxt = document.getElementById(pName).innerText
-  var inputTxt = "Hello world";
-  alert(inputTxt)
+  //alert(inputTxt)
 
   //speak();
 
   //inputTxt.blur();
-}*/
+}
 
-//getInnerText();
+getInnerText();
 
 function getAllVoices(){
   return new Promise(
@@ -99,23 +104,22 @@ function speak(){
   }
 }
 
-function playAudio() {
-  //getInnerText(pName)
-  speak();
-  //inputTxt.blur();
-}
-
-/*inputForm.onsubmit = function(event) {
-  event.preventDefault();
-  //getInnerText(pName)
+/*function playAudio() {
+  getInnerText(pName)
   speak();
   inputTxt.blur();
 }*/
 
+inputForm.onsubmit = function(event) {
+  event.preventDefault();
+  //getInnerText(pName)
+  speak();
+  inputTxt.blur();
+}
+
 /*pitch.onchange = function() {
   pitchValue.textContent = pitch.value;
 }
-
 rate.onchange = function() {
   rateValue.textContent = rate.value;
 }*/
