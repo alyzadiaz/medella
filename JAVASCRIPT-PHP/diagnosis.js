@@ -12,8 +12,7 @@ var summaryButton = document.getElementById("sumBut");
 var voices = [];
 
 summaryButton.onclick = function(){
-  var inputTxt = document.getElementById("summary1").innerText;
-  alert(inputTxt)
+  var inputTxt = document.getElementById("summary").innerHTML;
   speak(inputTxt);
 }
 
