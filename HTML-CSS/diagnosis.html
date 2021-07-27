@@ -56,12 +56,15 @@
                 <div class="flex-row">
                     <h2>Summary</h2>
                 </div>
-                <form>
+                <!--<form>-->
                     <select id="select"></select>
-                    <input type="image" src="../RESOURCES/speaker.svg" alt="Submit" width="20" height="20">
-                    <!--<button id="play" type="submit">Play</button>-->
-                </form>
-                <p>Parkinson's disease is a progressive nervous system disorder that affects movement. Symptoms start gradually, 
+                    <!--<input type="image" src="../RESOURCES/speaker.svg" alt="Submit" width="20" height="20">
+                    <button id="play" type="submit">Play</button>-->
+                    <button onclick="getInnerText('summary')" id=sumBut class="audio button">
+                        <img src="../RESOURCES/audio button.png" height="25px">
+                    </button>
+                <!--</form>-->
+                <p id="summary">Parkinson's disease is a progressive nervous system disorder that affects movement. Symptoms start gradually, 
                 sometimes starting with a barely noticeable tremor in just one hand. Tremors are common, but the disorder also commonly 
                 causes stiffness or slowing of movement. In the early stages of Parkinson's disease, your face may show little or no 
                 expression. Your arms may not swing when you walk. Your speech may become soft or slurred. Parkinson's disease symptoms

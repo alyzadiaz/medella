@@ -4,7 +4,8 @@ var inputForm = document.querySelector('form');
 //var inputTxt = document.querySelector('.txt');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
-var inputTxt;
+//var inputTxt = getInnerText(pName);
+
 
 /*
 var pitch = document.querySelector('#pitch');
@@ -14,6 +15,19 @@ var rateValue = document.querySelector('.rate-value');
 */
 
 var voices = [];
+
+//function to get inner text of selected section
+/*function getInnerText(pName) {
+  alert(document.getElementById(pName).innerText)
+}*/
+function getInnerText(pName) {
+  var inputTxt = document.getElementById(pName).innerText
+  //alert(inputTxt)
+
+  speak();
+
+  //inputTxt.blur();
+}
 
 function getAllVoices(){
   return new Promise(
@@ -90,13 +104,18 @@ function speak(){
   }
 }
 
-inputForm.onsubmit = function(event) {
-  event.preventDefault();
-
+/*function playAudio() {
+  getInnerText(pName)
   speak();
-
   inputTxt.blur();
-}
+}*/
+
+/*inputForm.onsubmit = function(event) {
+  event.preventDefault();
+  getInnerText(pName)
+  speak();
+  inputTxt.blur();
+}*/
 
 /*pitch.onchange = function() {
   pitchValue.textContent = pitch.value;

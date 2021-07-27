@@ -270,7 +270,7 @@ button{
 .diagnosis-body{
     background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
-    top: 55%;
+    top: 40%;
     bottom: 0;
     width: 100%;
     height: fit-content;
