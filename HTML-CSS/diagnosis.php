@@ -67,17 +67,16 @@
                                 <button id="btnSignUp" type="submit" class="btn btn-secondary fade-in center">Sign Up</button>
                             </div>
                         </div>
-                        <script src="../JAVASCRIPT-PHP/login.js"></script>
                     </div>
-                    <div id="registered">
+                    <div id="registered" class="login-content center">
                         <p class="center">USER PROFILE</p>
                         <button id="btnLogout" class="btn btn-action fade-in">Log Out</button>
-
-                        <script src="../JAVASCRIPT-PHP/logout.js"></script>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="../JAVASCRIPT-PHP/logout.js"></script>
+        <script src="../JAVASCRIPT-PHP/login.js"></script>
         <script src="../JAVASCRIPT-PHP/check-login.js"></script>
 
         <div id="diagnosis-title" class="inside">
