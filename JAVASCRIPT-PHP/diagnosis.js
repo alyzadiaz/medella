@@ -1,25 +1,34 @@
 var synth = window.speechSynthesis;
 
-var inputForm = document.querySelector('form');
+var inputForm = document.getElementById("lang-form");
 //var inputTxt = document.querySelector('.txt');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
-//var inputTxt = getInnerText(pName);
+var inputTxt = document.getElementById("summary").innerHTML;
+
+
+var summaryButton = document.getElementById("sumBut");
 
 var voices = [];
+
+summaryButton.onclick = function(){
+  speak();
+}
 
 //function to get inner text of selected section
 /*function getInnerText(pName) {
   alert(document.getElementById(pName).innerText)
 }*/
-function getInnerText(pName) {
-  var inputTxt = document.getElementById(pName).innerText
+function getInnerText() {
+  //var inputTxt = document.getElementById(pName).innerText
   //alert(inputTxt)
 
   //speak();
 
   //inputTxt.blur();
 }
+
+getInnerText();
 
 function getAllVoices(){
   return new Promise(
@@ -66,7 +75,6 @@ const a = getAllVoices()
     populateVoiceList(response);
     if (speechSynthesis.onvoiceschanged !== undefined) {
       speechSynthesis.onvoiceschanged = populateVoiceList(response);
-      inputTxt = voiceSelect.value;
     }
   });
 
@@ -76,11 +84,11 @@ function speak(){
         return;
     }
     if (inputTxt.value !== '') {
-    var utterThis = new SpeechSynthesisUtterance(inputTxt.value);
-    utterThis.onend = function (event) {
+      var utterThis = new SpeechSynthesisUtterance(inputTxt);
+      utterThis.onend = function (event) {
         console.log('SpeechSynthesisUtterance.onend');
-    }
-    utterThis.onerror = function (event) {
+      }
+      utterThis.onerror = function (event) {
         console.error('SpeechSynthesisUtterance.onerror');
     }
     var selectedOption = voiceSelect.selectedOptions[0].getAttribute('data-name');
@@ -90,8 +98,8 @@ function speak(){
         break;
       }
     }
-    utterThis.pitch = 1;
-    utterThis.rate = 1;
+    //utterThis.pitch = 1;
+    //utterThis.rate = 1;
     synth.speak(utterThis);
   }
 }
