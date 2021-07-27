@@ -24,6 +24,13 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
         </style>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script> 
+        
+        <script src="../JAVASCRIPT-PHP/home-login-button.js"></script>
     </head>
     <body>
         <div id="top-bar">
