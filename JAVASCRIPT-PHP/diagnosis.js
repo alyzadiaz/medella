@@ -1,21 +1,21 @@
 var synth = window.speechSynthesis;
-
+ 
 var inputForm = document.getElementById("lang-form");
 //var inputTxt = document.querySelector('.txt');
 //var inputTxt = document.getElementById("summary").innerText
 var voiceSelect = document.getElementById('select');
 //var inputTxt = document.getElementById("summary1").innerText;
-
-
+ 
+ 
 var summaryButton = document.getElementById("sumBut");
-
+ 
 var voices = [];
-
+ 
 summaryButton.onclick = function(){
   var inputTxt = document.getElementById("summary1").innerHTML;
   speak(inputTxt);
 }
-
+ 
 //function to get inner text of selected section
 /*function getInnerText(pName) {
   alert(document.getElementById(pName).innerText)
@@ -24,20 +24,20 @@ function getInnerText(pName) {
   //var inputTxt = document.getElementById(pName).innerText
   
   //alert(inputTxt)
-
+ 
   //speak();
-
+ 
   //inputTxt.blur();
 }
-
+ 
 getInnerText();
-
+ 
 function getAllVoices(){
   return new Promise(
     function(resolve, reject){
       let s = window.speechSynthesis;
       let id;
-
+ 
       id = setInterval(() =>{
         if(s.length !== 0){
           resolve(s);
@@ -47,7 +47,7 @@ function getAllVoices(){
     }
   )
 }
-
+ 
 function populateVoiceList(p) {
   voices = p.getVoices().sort(function (a, b) {
       const aname = a.name.toUpperCase(), bname = b.name.toUpperCase();
@@ -64,14 +64,14 @@ function populateVoiceList(p) {
     if(voices[i].default) {
       option.textContent += ' -- DEFAULT';
     }
-
+ 
     option.setAttribute('data-lang', voices[i].lang);
     option.setAttribute('data-name', voices[i].name);
     voiceSelect.appendChild(option);
   }
   voiceSelect.selectedIndex = selectedIndex;
 }
-
+ 
 const a = getAllVoices()
   .then((response) => {
     populateVoiceList(response);
@@ -79,7 +79,7 @@ const a = getAllVoices()
       speechSynthesis.onvoiceschanged = populateVoiceList(response);
     }
   });
-
+ 
 function speak(inputTxt){
     if (synth.speaking) {
         console.log('speechSynthesis.speaking');
@@ -105,27 +105,27 @@ function speak(inputTxt){
     synth.speak(utterThis);
   }
 }
-
+ 
 /*function playAudio() {
   getInnerText(pName)
   speak();
   inputTxt.blur();
 }*/
-
+ 
 inputForm.onsubmit = function(event) {
   event.preventDefault();
   //getInnerText(pName)
   //speak();
   //inputTxt.blur();
 }
-
+ 
 /*pitch.onchange = function() {
   pitchValue.textContent = pitch.value;
 }
 rate.onchange = function() {
   rateValue.textContent = rate.value;
 }*/
-
+ 
 voiceSelect.onchange = function(){
   speak();
 }
