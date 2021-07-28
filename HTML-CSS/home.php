@@ -58,6 +58,18 @@
                     <span class="close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
                 </div>
                 <div class="login-content center">
+                    <div id="guest" class="none">
+                        <div class="container">
+                            <input id ="txtEmail" type="email" placeholder="Email" oninput="clearError('txtEmail')">
+                
+                            <input id ="txtPassword" type="password" placeholder="Password" oninput="clearError('txtPassword')">
+                            
+                            <div class="container flex">
+                                <button id="btnLogin" type="submit" class="btn btn-action fade-in center">Log In</button>
+                                <button id="btnSignUp" type="submit" class="btn btn-secondary fade-in center">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
                     <p class="center">USER PROFILE</p>
                     <button id="btnLogout" class="btn btn-action fade-in">Log Out</button>
                 </div>
@@ -69,6 +81,7 @@
         </form>
 
         <script src="../JAVASCRIPT-PHP/logout.js"></script>
+        <script src="../JAVASCRIPT-PHP/login.js"></script>
 
         <script type="text/javascript">
             setTimeout(() => {

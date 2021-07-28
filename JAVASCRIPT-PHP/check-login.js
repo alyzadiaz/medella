@@ -16,5 +16,14 @@
 
             registered_user.classList.add("none");
         }
+
+        var home = document.getElementById("go-home");
+        home.onclick = function(){
+            if(firebaseUser){
+                location.href="../HTML-CSS/pull-user.html";
+            }else{
+                location.href="../HTML-CSS/home-g.html";
+            }
+        }
     })
 }());

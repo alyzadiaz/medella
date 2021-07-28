@@ -34,7 +34,7 @@
     </head>
     <body>
         <div id="top-bar">
-            <button><img src="../RESOURCES/m-logo.png" height="150px"></button> <!--link to home pages-->
+            <button id="go-home"><img src="../RESOURCES/m-logo.png" height="150px"></button> <!--link to home pages-->
             <button type="button" class="login-button right">
                 <img src="../RESOURCES/settings.png" height="30px">
             </button>
@@ -70,8 +70,8 @@
             </div>
         </div>
         <script src="../JAVASCRIPT-PHP/logout.js"></script>
-        <script src="../JAVASCRIPT-PHP/login.js"></script>
         <script src="../JAVASCRIPT-PHP/check-login.js"></script>
+        <script src="../JAVASCRIPT-PHP/login.js"></script>
 
         <div class="inside">
             <form action="search.php" method="get">

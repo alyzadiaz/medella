@@ -43,7 +43,7 @@
     </head>
     <body>
         <div id="top-bar">
-            <img src="../RESOURCES/m-logo.png" height="150px">
+            <button id="go-home"><img src="../RESOURCES/m-logo.png" height="150px"></button>
             <button type="button" class="login-button right">
                 <img src="../RESOURCES/settings.png" height="30px">
             </button>
@@ -77,7 +77,6 @@
         </div>
         <script src="../JAVASCRIPT-PHP/logout.js"></script>
         <script src="../JAVASCRIPT-PHP/login.js"></script>
-        <script src="../JAVASCRIPT-PHP/check-login.js"></script>
 
         <div id="diagnosis-title" class="inside">
             <div class="flex-row">
@@ -136,6 +135,7 @@
             </div>
         </div>
         <?php endwhile; ?>
+        <script src="../JAVASCRIPT-PHP/check-login.js"></script>
         <script src="../JAVASCRIPT-PHP/bookmark.js"></script>
         <script src="../JAVASCRIPT-PHP/diagnosis.js"></script>
         
