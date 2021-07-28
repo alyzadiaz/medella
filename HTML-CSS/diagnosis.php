@@ -18,6 +18,7 @@
         $name = $row['name'];
         $id = $row['id'];
         $treatment = $row['treatment'];
+        $source = $row['more'];
         $symptoms = $row['symptoms'];
         $summary = $row['facts0'].' '.$row['facts1'].' '.$row['facts2'].' '.$row['facts3'].' '.$row['facts4'].' '.$row['facts5'].' '.$row['facts6'];
         //$summary = $row['facts0'];
@@ -122,6 +123,10 @@
                     </button>
                 </form>
                 <p id="summary1"><?php echo $summary;?></p>
+                <div id="diagnosis-source" class="block">
+                </br>
+                <p id="source"><a href="<?php echo $source?>">Source: <?php echo $source?></a></p>
+            </div>
             </div>
             <div id="diagnosis-treatment" class="block right">
                 <div class="flex-row">
