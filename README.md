@@ -42,6 +42,8 @@ For this project we used:
 4. JavaScript
 
 ## Getting Started
+Because Medella uses PHP, some set up is required before running the project.
+
 ### Installation and Setup
 1. Download a copy of the Medella repository
 2. Install [XAMPP Control Panel](https://www.apachefriends.org/download.html with the most recent version of PHP and run the program.
