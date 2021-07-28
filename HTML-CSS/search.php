@@ -79,9 +79,9 @@
                 <input class="search-input" type="text" name="search-query">
                 <button type="submit" id="search_button"><i class="fa fa-search fa-2x"></i></button>
             </form>
+            <div id="google_translate_element"></div>
         </div>
  
-        <div id="google_translate_element"></div>
             
         <script type ="text/javascript">
             function googleTranslateElementInit(){
