@@ -27,7 +27,7 @@ body{
     top: 40%;
     bottom: 0;
     width: 100%;
-    height: 100%;
+    height: fit-content;
 }
 
 .search-results > h1{
@@ -40,18 +40,18 @@ body{
     src: url(../RESOURCES/Bebas-KM7y.ttf);
 }
 
-a {
+a, .underline-button {
     position: relative;
     color: #000;
     text-decoration: none;
 }
   
-a:hover {
+a:hover, .underline-button:hover {
     color: #000;
     font-weight: bold;
 }
 
-a::before {
+a::before, .underline-button::before {
     content: "";
     position: absolute;
     display: block;
@@ -64,7 +64,7 @@ a::before {
     transition: transform 0.3s ease;
 }
 
-a:hover::before {
+a:hover::before, .underline-button:hover::before {
     transform: scaleX(1);
 }
 
@@ -257,6 +257,8 @@ button{
     width: 95%;
     background-color:#A9BEDA;
     font-size: larger;
+    text-transform: uppercase;
+    text-align: left;
 }
 
 #diagnosis-summary, #diagnosis-treatment{
@@ -264,6 +266,7 @@ button{
     width: 60%;
     padding: 2%;
     margin: 4%;
+    height: fit-content;
 }
 
 .diagnosis-body{
@@ -272,5 +275,9 @@ button{
     top: 55%;
     bottom: 0;
     width: 100%;
-    height: 100%;
+    height: fit-content;
+}
+
+#no-results{
+    padding: 2%;
 }
