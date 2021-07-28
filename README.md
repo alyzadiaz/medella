@@ -38,8 +38,9 @@ As many of us know, the Healthcare Industry is rapidly growing and many new adva
 For this project we used:
 1. PHP
 2. MySQL
-3. HTML/CSS
-4. JavaScript
+3. AWS
+4. HTML/CSS
+5. JavaScript
 
 ## Getting Started
 Because Medella uses PHP, some set up is required before running the project.
