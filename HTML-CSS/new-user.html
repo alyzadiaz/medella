@@ -2,9 +2,9 @@
 <html>
     <head>
         <title>User Profile</title>
-        <link rel="stylesheet" type="text/css" href="../HTML-CSS/home.css?v=<?php echo time(); ?>">
+        <link rel="stylesheet" type="text/css" href="../HTML-CSS/new-home.css?v=<?php echo time(); ?>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" href="../RESOURCES/lavender.svg">
+        <link rel="icon" href="../RESOURCES/lavender.ico">
 
         <style>
             @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
@@ -21,13 +21,13 @@
         <div class="form-box center">
             <div class="form-fields">
                 <div class="center">
-                    <form action="../JAVASCRIPT-PHP/new-profile-form.php" method="get">
-                        First Name: <input id="f_name" type="text" name="first-name"><br>
-                        Last Name: <input type="text" name="last-name"><br>
-                        Street Address: <input type="text" name="addy"><br>
-                        State: <input type="text" name="state"><br>
-                        Zip Code: <input type="text" name="zip"><br>
-                        Country: <select id="country" name="country">
+                    <form id="new-form" action="../JAVASCRIPT-PHP/new-profile-form.php" method="get">
+                        <div class="element">First Name: <input id="f_name" type="text" name="first-name"></div>
+                        <div class="element">Last Name: <input type="text" name="last-name"></div>
+                        <div class="element">Street Address: <input type="text" name="addy"></div>
+                        <div class="element">State: <input type="text" name="state"></div>
+                        <div class="element">Zip Code: <input type="text" name="zip"></div>
+                        <div class="element">Country: <select id="country" name="country">
                             <option value="none" selected disabled hidden>Select an Option</option>
                             <option value="Afghanistan">Afghanistan</option>
                             <option value="Åland Islands">Åland Islands</option>
@@ -273,10 +273,10 @@
                             <option value="Yemen">Yemen</option>
                             <option value="Zambia">Zambia</option>
                             <option value="Zimbabwe">Zimbabwe</option>
-                        </select>
+                        </select></div>
                         <input id="uid" class="hidden" name="u-id">
                         <input id ="txtEmail" class="hidden" type="text" name="email"><br>
-                        <button type="submit">Submit</button>
+                        <button id="new-submit" class="element underline-button" type="submit">Submit</button>
                     </form>
 
                 </div>

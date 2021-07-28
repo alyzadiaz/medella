@@ -77,9 +77,10 @@ const a = getAllVoices()
     populateVoiceList(response);
     if (speechSynthesis.onvoiceschanged !== undefined) {
       speechSynthesis.onvoiceschanged = populateVoiceList(response);
+      inputTxt = voiceSelect.value;
     }
   });
- 
+
 function speak(inputTxt){
     if (synth.speaking) {
         console.log('speechSynthesis.speaking');
@@ -109,6 +110,7 @@ function speak(inputTxt){
 /*function playAudio() {
   getInnerText(pName)
   speak();
+
   inputTxt.blur();
 }*/
  

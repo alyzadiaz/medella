@@ -275,7 +275,40 @@ button{
     width: 100%;
     height: fit-content;
 }
- 
-select {
-    width: 83%;
-  }
+
+#no-results{
+    padding: 2%;
+}
+
+#bookmark{
+    padding: 5px;
+    margin: 10px;
+    background-color: transparent;
+}
+
+.none{
+    display: none;
+}
+
+button {
+    background-color: transparent;
+}
+
+.saved-result{
+    padding: 2%;
+    margin: 1%;
+    font-size: larger;
+}
+
+h1#new-u{
+    text-align: center;
+    padding: 5%;
+}
+
+.element{
+    padding: 2%;
+}
+
+#new-submit{
+    font-size: large;
+}

@@ -1,16 +1,5 @@
 (function() {
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-        apiKey: "AIzaSyA7Ffj-KcNo3KYcjEDCk6nC_IUfN2VYhRE",
-        authDomain: "medella-login.firebaseapp.com",
-        projectId: "medella-login",
-        storageBucket: "medella-login.appspot.com",
-        messagingSenderId: "569506160482",
-        appId: "1:569506160482:web:d344232bbcc57a3ad0563b",
-        measurementId: "G-MLRF7RR7QC"
-    };
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+
 
     //Get elements
     const txtEmail = document.getElementById('txtEmail');
@@ -29,7 +18,7 @@
         const promise = auth.signInWithEmailAndPassword(email,pass).then(function(user){
             console.log("login successful");
             //console.log(auth.currentUser.uid);
-            location.href = "../HTML-CSS/home.php";
+            location.href = "../HTML-CSS/pull-user.html";
         }).catch(function(error){
             console.log(error.message);
 

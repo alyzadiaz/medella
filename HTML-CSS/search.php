@@ -19,19 +19,61 @@
         <title>Search</title>
         <link rel="stylesheet" type="text/css" href="new-home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" href="../RESOURCES/lavender.svg">
- 
+
+        <link rel="icon" href="../RESOURCES/lavender.ico">
+
         <style>
             @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
         </style>
+        
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script> 
+        
+        <script src="../JAVASCRIPT-PHP/home-login-button.js"></script>
     </head>
     <body>
         <div id="top-bar">
-            <img src="../RESOURCES/m-logo.png" height="150px">
+            <button id="go-home"><img src="../RESOURCES/m-logo.png" height="150px"></button> <!--link to home pages-->
             <button type="button" class="login-button right">
                 <img src="../RESOURCES/settings.png" height="30px">
             </button>
         </div>
+
+        <div class="popup">
+            <div class="popup-content">
+                <div class="close-x">
+                    <span class="close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
+                </div>
+                <div class="login-content center">
+                    <img src="../RESOURCES/m-logo.png" class="center" height="80px" width="160px">
+                    <div id="guest">
+                        <div class="container">
+                            <input id ="txtEmail" type="email" placeholder="Email" oninput="clearError('txtEmail')">
+                
+                            <input id ="txtPassword" type="password" placeholder="Password" oninput="clearError('txtPassword')">
+                            
+                            <div class="container flex">
+                                <button id="btnLogin" type="submit" class="btn btn-action fade-in center">Log In</button>
+                                <button id="btnSignUp" type="submit" class="btn btn-secondary fade-in center">Sign Up</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div id="registered" class="login-content center">
+                        <p class="center">USER PROFILE</p>
+                        <button id="btnLogout" class="btn btn-action fade-in">Log Out</button>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../JAVASCRIPT-PHP/logout.js"></script>
+        <script src="../JAVASCRIPT-PHP/check-login.js"></script>
+        <script src="../JAVASCRIPT-PHP/login.js"></script>
+
         <div class="inside">
             <form action="search.php" method="get">
                 <input class="search-input" type="text" name="search-query">

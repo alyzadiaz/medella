@@ -11,22 +11,9 @@
             
     session_start();
 
-    //$uid = $_SESSION['share-uid'];
-    /*
-    if(isset($_POST["uid"])){
-        $test = $_POST["uid"];
-        echo $test;
-    }else{?>
-
-    <script>
-        document.getElementById("form").submit();
-    </script>
-
-    <?php
-    }
-            
+    $uid = $_POST['uid'];
     $name = "";
-    $sql = "select First_Name from Medella.User where User_Id ='$test' ";
+    $sql = "select First_Name from Medella.User where User_Id ='$uid' ";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
@@ -34,7 +21,7 @@
         }
     } else {
         echo "0 results";
-    }*/
+    }
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +31,7 @@
         <title>Medella</title>
         <link rel="stylesheet" type="text/css" href="new-home.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" href="../RESOURCES/lavender.svg">
+        <link rel="icon" href="../RESOURCES/lavender.ico">
 
         <style>
             @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
@@ -71,17 +58,30 @@
                     <span class="close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></span>
                 </div>
                 <div class="login-content center">
+                    <div id="guest" class="none">
+                        <div class="container">
+                            <input id ="txtEmail" type="email" placeholder="Email" oninput="clearError('txtEmail')">
+                
+                            <input id ="txtPassword" type="password" placeholder="Password" oninput="clearError('txtPassword')">
+                            
+                            <div class="container flex">
+                                <button id="btnLogin" type="submit" class="btn btn-action fade-in center">Log In</button>
+                                <button id="btnSignUp" type="submit" class="btn btn-secondary fade-in center">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
                     <p class="center">USER PROFILE</p>
                     <button id="btnLogout" class="btn btn-action fade-in">Log Out</button>
                 </div>
             </div>
         </div>
         
-        <form id="form" name="id-form" class ="hidden" action="home.php" method="post">
+        <form id="form" name="id-form" class ="hidden" method="post">
             <input id="uid" name="uid">
-            
         </form>
+
         <script src="../JAVASCRIPT-PHP/logout.js"></script>
+        <script src="../JAVASCRIPT-PHP/login.js"></script>
 
         <script type="text/javascript">
             setTimeout(() => {
@@ -90,23 +90,44 @@
         </script>
 
         <div id="greeting" class="center">
-            <p id="welcome-name">Welcome</p>
+            <p id="welcome-name">Welcome, <?php echo $name?></p>
 
             <div id="nav-container">
             <nav class="block">
-                <a href="search.html">Search <i class="fa fa-search" aria-hidden="true"></i></a>
+                <a href="search.php">Search <i class="fa fa-search" aria-hidden="true"></i></a>
             </nav>
             <div class="block">
                 <p id="bottom-border">Saved Articles</p>
                 <div class="spacer"></div>
                 <div id="saved-articles">
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
-                    <p>No saved articles</p>
+
+                    <?php
+
+                        $query_articles = "SELECT name, id FROM Medella.disease WHERE id=
+                                            (
+                                                SELECT saved from Medella.User WHERE User_Id='$uid'
+                                            )";
+                        $articles_results = mysqli_query($conn, $query_articles);
+
+                        if($articles_results->num_rows==0){
+                    ?>
+                        <h1 id="no-results">No articles saved.</h1>
+                    <?php
+                        }else{
+                            while($row = mysqli_fetch_array($articles_results)):
+                            //load articles that post to diagnosis.php
+                                $diagnosis_name = $row['name'];
+                                $diagnosis_id = $row['id'];
+                    ?>
+                            <form class="id-form" action="../HTML-CSS/diagnosis.php" method="post">
+                                <button class="underline-button saved-result"><?php echo $diagnosis_name;?></button>
+                                <input class="hidden" type="number" name="id" value=<?php echo $diagnosis_id?>>
+                            </form>
+                    <?php
+                            endwhile;
+                        }
+                    ?>
+
                 </div>
             </div>
         </div>
