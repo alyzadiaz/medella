@@ -46,7 +46,7 @@ Because Medella uses PHP, some set up is required before running the project.
 
 ### Installation and Setup
 1. Download a copy of the Medella repository
-2. Install [XAMPP Control Panel](https://www.apachefriends.org/download.html with the most recent version of PHP and run the program.
+2. Install [XAMPP Control Panel](https://www.apachefriends.org/download.html) with the most recent version of PHP and run the program.
 3. Click the "Explorer" button and drag the Medella repository into the htdocs folder.
     <p>
         <img src="RESOURCES/INSTRUCTIONS/xampp-explorer.png" height="275px">
