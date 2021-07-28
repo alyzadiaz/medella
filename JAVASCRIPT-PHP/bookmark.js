@@ -14,15 +14,21 @@ const check = document.getElementById("check");
 }());
 
 button.onclick = function(){
-    if(empty_bookmark.classList.contains("none")){  //removing from saved
-        check.checked = false;
-        empty_bookmark.classList.remove("none")
-        filled_bookmark.classList.add("none");
-    }else{  //adding to saved
-        check.checked = true;
-        empty_bookmark.classList.add("none");
-        filled_bookmark.classList.remove("none");
-    }
-
-    uid_form.submit();
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if(firebaseUser){
+            if(empty_bookmark.classList.contains("none")){  //removing from saved
+                check.checked = false;
+                empty_bookmark.classList.remove("none")
+                filled_bookmark.classList.add("none");
+            }else{  //adding to saved
+                check.checked = true;
+                empty_bookmark.classList.add("none");
+                filled_bookmark.classList.remove("none");
+            }
+            
+            uid_form.submit();
+        }else{
+            alert("Please sign in to save articles!");
+        }
+    })
 }

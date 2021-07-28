@@ -19,8 +19,8 @@
         $id = $row['id'];
         $treatment = $row['treatment'];
         $symptoms = $row['symptoms'];
-        //$summary = $row['facts0'].' '.$row['facts1'].' '.$row['facts2'].' '.$row['facts3'].' '.$row['facts4'].' '.$row['facts5'].' '.$row['facts6'];
-        $summary = $row['facts0'];
+        $summary = $row['facts0'].' '.$row['facts1'].' '.$row['facts2'].' '.$row['facts3'].' '.$row['facts4'].' '.$row['facts5'].' '.$row['facts6'];
+        //$summary = $row['facts0'];
 ?>
  
 <!DOCTYPE html>
