@@ -11,13 +11,13 @@
     <li>
       <a href="#introduction">Introduction</a>
     </li>
-    <li><a href="#features">Features</a>
+    <li><a href="#features">Features</a></li>
+     <li><a href="#technologies">Technologies</li>
     <li><a href="#getting-started">Getting Started</a>
         <ul>
           <li><a href="#installation-and-setup">Installation and Setup</a></li>
       </ul>
     </li>
-    <li><a href="#demo-video">Demo Video</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -29,12 +29,35 @@ As many of us know, the Healthcare Industry is rapidly growing and many new adva
 </p>
 
 ## Features
+1. Account creation and sign-in
+2. Saving diagnosis information
+3. Text translation
+4. Text-to-speech capabilities
+
+## Technologies
+For this project we used:
+1. PHP
+2. MySQL
+3. HTML/CSS
+4. JavaScript
 
 ## Getting Started
 ### Installation and Setup
-
-## Demo Video
-
+1. Download a copy of the Medella repository
+2. Install [XAMPP Control Panel](https://www.apachefriends.org/download.html with the most recent version of PHP and run the program.
+3. Click the "Explorer" button and drag the Medella repository into the htdocs folder.
+    <p>
+        <img src="RESOURCES/INSTRUCTIONS/xampp-explorer.png" height="275px">
+    </p>
+4. Start the Apache and MySQL modules
+    <p>
+        <img src="RESOURCES/INSTRUCTIONS/xampp-modules.png" height="275px">
+    </p>
+5. Open a browser and navigate to localhost/medella/HTML-CSS/home-g.html
+    <p>
+        <img src="RESOURCES/INSTRUCTIONS/guest-home-page.png" height="275px">
+    </p>
+    
 ## Contact
 * Alyza Diaz Rodriguez - diazrodrigueza@wit.edu
 * Danielle Shackley - shackleyd@wit.edu
