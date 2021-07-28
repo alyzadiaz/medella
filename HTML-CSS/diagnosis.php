@@ -1,6 +1,6 @@
 <?php
     $id = $_POST["id"];
-
+ 
     $servername = "medella.chle4yzdrgqk.us-east-2.rds.amazonaws.com";
     $username = "admin";
     $password = "Medella123!";
@@ -10,18 +10,19 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
+ 
     $sql = "SELECT * FROM Medella.disease WHERE id=$id";
     $result = mysqli_query($conn, $sql);
-
+ 
     while ($row = mysqli_fetch_array($result)):
         $name = $row['name'];
         $id = $row['id'];
         $treatment = $row['treatment'];
         $symptoms = $row['symptoms'];
-        $summary = $row['facts0'].' '.$row['facts1'].' '.$row['facts2'].' '.$row['facts3'].' '.$row['facts4'].' '.$row['facts5'].' '.$row['facts6'];
+        //$summary = $row['facts0'].' '.$row['facts1'].' '.$row['facts2'].' '.$row['facts3'].' '.$row['facts4'].' '.$row['facts5'].' '.$row['facts6'];
+        $summary = $row['facts0'];
 ?>
-
+ 
 <!DOCTYPE html>
 <html>
     <head>
@@ -104,7 +105,7 @@
                     );
                 }            
             </script>
-
+ 
             <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
         
         </div>
@@ -112,24 +113,31 @@
             <div id="diagnosis-summary" class="block left">
                 <div class="flex-row">
                     <h2>Summary</h2>
+                    <!--<span class="helper"></span><img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">-->
                 </div>
-                <form>
-                    <select id="select"></select>
-                    <input type="image" src="../RESOURCES/speaker.svg" alt="Submit" height="20px">
+                <form id="lang-form">
+                <select id="select"></select>
+                    <button onclick id="sumBut" class="audio button">
+                        <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    </button>
                 </form>
-                <p><?php echo $summary;?></p>
+                <p id="summary1"><?php echo $summary;?></p>
             </div>
             <div id="diagnosis-treatment" class="block right">
                 <div class="flex-row">
                     <h2>Symptoms</h2>
-                    <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    <button class="audio button">
+                        <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    </button>
                 </div>
                 <p><?php echo $symptoms;?></p>               
             </div>
             <div id="diagnosis-treatment" class="block right">
                 <div class="flex-row">
                     <h2>Treatment</h2>
-                    <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    <button class="audio button">
+                        <img src="../RESOURCES/speaker.svg" class="audio" alt="Audio option"  height="20px">
+                    </button>
                 </div>
                 <p><?php echo $treatment;?></p>
             </div>
