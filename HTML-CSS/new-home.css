@@ -301,3 +301,16 @@ button {
     margin: 1%;
     font-size: larger;
 }
+
+h1#new-u{
+    text-align: center;
+    padding: 5%;
+}
+
+.element{
+    padding: 2%;
+}
+
+#new-submit{
+    font-size: large;
+}
