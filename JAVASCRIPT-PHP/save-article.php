@@ -16,12 +16,12 @@
     $sql;
 
     if($checked=='on'){
-        $sql = "UPDATE Medella.User SET saved_articles=CONCAT(saved_articles,'$disease/') WHERE User_Id='$uid'";
+        $sql = "UPDATE Medella.User SET saved=$disease WHERE User_Id='$uid'";
     }else{
         $sql = "UPDATE Medella.User SET saved_articles=REPLACE(saved_articles,'$disease/','') WHERE User_Id='$uid'";
     }
 
-    echo $sql;
-    
-   
+    $result = $conn->query($sql);
+
+    header('Location: ../HTML-CSS/pull-user.html');
 ?>

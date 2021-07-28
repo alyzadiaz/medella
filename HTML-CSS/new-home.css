@@ -295,3 +295,9 @@ button{
 button {
     background-color: transparent;
 }
+
+.saved-result{
+    padding: 2%;
+    margin: 1%;
+    font-size: larger;
+}

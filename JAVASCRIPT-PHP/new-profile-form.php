@@ -22,12 +22,9 @@
     $country = $_GET["country"];
 
     $sql = "INSERT INTO Medella.User (User_Id, First_Name, Last_Name, Email, Street, Zip, User_State, Country) 
-    VALUES ('$uid', '$f_name', '$l_name', '$email', '$address', '$zip', '$state', '$country')";
+            VALUES ('$uid', '$f_name', '$l_name', '$email', '$address', '$zip', '$state', '$country')";
     $result = $conn->query($sql);
-    
-    session_start();
-    $_SESSION['share-uid'] = $uid;
 
     $conn->close();
-    header('Location: ../HTML-CSS/home.php');
+    header('Location: ../HTML-CSS/pull-user.html');
 ?>

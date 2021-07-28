@@ -88,19 +88,31 @@
                 <div class="spacer"></div>
                 <div id="saved-articles">
 
-                    <?php 
-                        $query_articles = "SELECT saved_articles FROM Medella.User WHERE User_Id='$uid'";
+                    <?php
+
+                        $query_articles = "SELECT name, id FROM Medella.disease WHERE id=
+                                            (
+                                                SELECT saved from Medella.User WHERE User_Id='$uid'
+                                            )";
                         $articles_results = mysqli_query($conn, $query_articles);
 
                         if($articles_results->num_rows==0){
                     ?>
                         <h1 id="no-results">No articles saved.</h1>
                     <?php
+                        }else{
+                            while($row = mysqli_fetch_array($articles_results)):
+                            //load articles that post to diagnosis.php
+                                $diagnosis_name = $row['name'];
+                                $diagnosis_id = $row['id'];
+                    ?>
+                            <form class="id-form" action="../HTML-CSS/diagnosis.php" method="post">
+                                <button class="underline-button saved-result"><?php echo $diagnosis_name;?></button>
+                                <input class="hidden" type="number" name="id" value=<?php echo $diagnosis_id?>>
+                            </form>
+                    <?php
+                            endwhile;
                         }
-                        
-                        while($row = mysqli_fetch_array($articles_results)):
-                        //load articles that post to diagnosis.php
-                        endwhile;
                     ?>
 
                 </div>
